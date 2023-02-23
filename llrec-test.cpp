@@ -86,9 +86,14 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
+    
+    // cout << "llpivot test ~ pivot= 8: ";
+    // Node* tst_smaller = nullptr;
+    // Node* tst_larger = nullptr;
+    // llpivot(head, tst_smaller, tst_larger, 8);
+    // print(head);
 
-
-
+    // print(llrec(head, pred));
     
     return 0;
 

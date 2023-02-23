@@ -84,7 +84,31 @@ Node* llfilter(Node* head, Comp pred)
     // Provide your implementation below
     //*********************************************
 
+		// NOTE: implementation for operator() explained on instruction page 6
+		// pred(value here)
 
+		// compare head node val with comp (use operator(int))
+		// if operator(int) returns true:
+			// hold current node in a temp
+			// head = head->next
+			// delete temp
+		// if operator(int) returns false:
+			// move on to next node
+
+		if (head == nullptr){
+			return head;
+		}
+		else if (pred(head->val)){	// not keeping the node 
+			// keeps running through this else if 
+			// until it satisfies the else
+			delete head;
+			llfilter(head->next, pred);
+		}
+		else{ // keeping the node
+			// want the node, so linking it to next potential node
+			head->next = llfilter(head->next, pred);
+			return head;
+		}
 }
 
 #endif
